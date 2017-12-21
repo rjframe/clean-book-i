@@ -2,7 +2,7 @@ module ch1
 
 import StdEnv
 
-Start = [Max 10 20, Min 10 20]
+Start = MaxOfList [2, 4, 0, 2, 8, -8, 3, 1332, 482]
 
 
 /** Exercises **/
@@ -29,6 +29,13 @@ Min x y
     | x > y = y
             = x
 
+// #7
+
+// TODO: How do I keep this with an empty list?
+// MaxOfList :: [t] -> t
+MaxOfList [] = 0 // This should be the minimum possible int/real value in case
+                 // the list has all negative numbers.
+MaxOfList [x:xs] = Max x (MaxOfList xs)
 
 /** Play **/
 
