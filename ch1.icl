@@ -2,7 +2,7 @@ module ch1
 
 import StdEnv
 
-Start = MaxOfList [2, 4, 0, 2, 8, -8, 3, 1332, 482]
+Start = LastTwo [2, 4, 0, 2, 8, -8, 3, 1332, 482]
 
 
 /** Exercises **/
@@ -36,6 +36,19 @@ Min x y
 MaxOfList [] = 0 // This should be the minimum possible int/real value in case
                  // the list has all negative numbers.
 MaxOfList [x:xs] = Max x (MaxOfList xs)
+
+// #10
+
+LastTwo :: [t] -> [t]
+LastTwo [x:xs]
+    | length xs == 1 = [x, elem xs]
+                     = LastTwo xs
+    where
+        length []       = 0
+        length [_:tail] = 1 + length tail
+
+        elem [x] = x
+
 
 /** Play **/
 
