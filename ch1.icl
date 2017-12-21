@@ -2,7 +2,7 @@ module ch1
 
 import StdEnv
 
-Start = [canDivideByNine 27, canDivideByNine 100]
+Start = [Max 10 20, Min 10 20]
 
 
 /** Exercises **/
@@ -16,6 +16,19 @@ isum x = x rem 10 + isum(x/10)
 // #4
 
 canDivideByNine x = isum x == 9
+
+// #5, 6
+
+Max x y
+    | x < y = y
+    | x > y = x
+            = x
+
+Min x y
+    | x < y = x
+    | x > y = y
+            = x
+
 
 /** Play **/
 
