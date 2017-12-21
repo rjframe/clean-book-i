@@ -2,7 +2,7 @@ module ch1
 
 import StdEnv
 
-Start = isum 1234
+Start = [canDivideByNine 27, canDivideByNine 100]
 
 
 /** Exercises **/
@@ -13,6 +13,9 @@ isum :: Int -> Int
 isum 0 = 0
 isum x = x rem 10 + isum(x/10)
 
+// #4
+
+canDivideByNine x = isum x == 9
 
 /** Play **/
 
@@ -40,4 +43,3 @@ length :: [t] -> Int
 length []       = 0
 length [_:tail] = 1 + length tail
 
-		
